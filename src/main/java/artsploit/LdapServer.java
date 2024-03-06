@@ -72,6 +72,7 @@ class LdapServer extends InMemoryOperationInterceptor {
     @Override
     public void processSearchResult(InMemoryInterceptedSearchResult result) {
         String base = result.getRequest().getBaseDN();
+        System.out.println(base);
         LdapController controller = null;
         //find controller
         for(String key: routes.keySet()) {

